@@ -1,8 +1,8 @@
-from django.urls import path, include
+from django.urls import path
 from .views import (
-    LingoListApiView,
+    LingoApiView
 )
 
 urlpatterns = [
-    path('lingos', LingoListApiView.as_view()),
+    path('', LingoApiView.as_view()),
 ]

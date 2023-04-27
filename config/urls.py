@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mlopslingo.lingos import urls as lingo_urls
+from mlopslingo.lingos.views import LingoApiView, LingoTypeApiView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('lingos/', include(lingo_urls)),
+    path('lingos/', LingoApiView.as_view(), name='lingos'),
+    path('lingo-types/', LingoTypeApiView.as_view(), name='lingo-types'),
 ]

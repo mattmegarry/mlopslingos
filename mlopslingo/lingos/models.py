@@ -2,6 +2,7 @@ from django.db import models
 
 
 class LingoType(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=40)
 
     def __str__(self):
@@ -9,6 +10,7 @@ class LingoType(models.Model):
 
 
 class Lingo(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     description = models.TextField()
     lingo_type = models.ForeignKey(LingoType, on_delete=models.CASCADE)

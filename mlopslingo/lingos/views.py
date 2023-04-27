@@ -19,6 +19,19 @@ class LingoApiView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+class LingoRandomApiView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request, *args, **kwargs):
+        '''
+        Get a random Lingo
+        '''
+        lingo = Lingo.objects.order_by('?').first()
+        serializer = LingoSerializer(
+            lingo, context={'request': request}, many=False)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
 class LingoTypeApiView(APIView):
     permission_classes = [permissions.AllowAny]
 

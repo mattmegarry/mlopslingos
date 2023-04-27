@@ -26,7 +26,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 print('DEBUG is currently set to:', DEBUG)
 
 
-ALLOWED_HOSTS = [] if DEBUG else ['mlopslingos.pythonanywhere.com']
+ALLOWED_HOSTS = [] if DEBUG else ['mlopslingo.pythonanywhere.com']
 
 # Application definition
 
